@@ -1,0 +1,43 @@
+@use './mixins' as *;
+
+.review {
+    grid-row: 8 / 10;
+    grid-column: 1 / 7;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    margin: 5rem 3rem 5rem 0.9rem;
+  
+    @media screen and (min-width: 800px) {
+      margin: 0 1rem 0 0;
+    }
+  
+    div:nth-child(1) {
+      display: none;
+  
+      @media screen and (min-width: 800px) {
+        display: block;
+        margin: 4rem;
+      }
+    }
+  
+    img {
+      float: left;
+      margin: 0px 20px 20px;
+      height: 96px;
+      width: 96px;
+      border-radius: 3rem;
+    }
+  
+    span {
+      font-size: 1.4rem;
+      margin: 0 25px 0 0;
+      text-align: left;
+  
+      p {
+        @include roboto-italic;
+        font-size: 1.2rem;
+        margin: 15px 0 0 136px;
+      }
+    }
+  }

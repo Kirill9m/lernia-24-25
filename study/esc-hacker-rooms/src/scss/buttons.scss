@@ -1,0 +1,63 @@
+@mixin button-group {
+    button {
+      color: #011827;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1.3rem;
+      border: 0;
+      border-radius: 0.2rem;
+      background-color: #8ACFE5;
+      height: 4rem;
+      width: 19rem;
+  
+      &:nth-child(2) {
+        background-color: white;
+        color: #36769D;
+        font-size: 1.3rem;
+        text-decoration: underline;
+  
+        @media screen and (min-width: 800px) {
+          background-color: #E3170A;
+          color: #ffffff;
+          text-decoration: none;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  
+
+.button-group {
+    grid-row: 6 / 7;
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include button-group;
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row-reverse;
+        justify-content: center;
+        grid-row: 5 / 7;
+        z-index: 10;
+    }
+}
+
+.button-group-two {
+    grid-row: 15 / 17;
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+
+    @include button-group;
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+}

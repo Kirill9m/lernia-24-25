@@ -1,0 +1,116 @@
+<!-- 
+The A11Y Project är ett community-drivet initiativ som strävar efter att göra digital tillgänglighet enklare, 
+mer begriplig och lättare att implementera för alla.
+
+Läs lite om projektet:
+https://www.a11yproject.com/about/
+
+
+Tillgänglighet är en viktig del av webbutveckling. Det handlar om att göra webbplatser och appar tillgängliga för alla, inklusive personer med funktionsnedsättningar. 
+Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att använda semantisk HTML, skapa enkel navigering och använda alternativa texter för bilder.
+ ____________________________________________________________________________________________________
+ 1. Läs noga genom koden och identifiera alla tillgänglighetsproblem.
+ 
+ 2. Testa kör lighthouse i devtools(Google chrome) och se vilka problem som finns.
+
+ 3. Skriv en kort sammanfattning av vad som är fel och hur det kan åtgärdas.
+
+ 4. Skriv om koden så att den följer tillgänglighetsstandarder.
+
+ 5. Skriv en kort sammanfattning av vad du har ändrat och varför.
+
+ 6. Testa din nya kod med andra verktyg för tillgänglighet.
+
+ 7. Skriv en kort reflektion över hur det var att göra uppgiften. Vad var svårt? Vad lärde du dig?
+ ____________________________________________________________________________________________________
+
+-->
+
+<!DOCTYPE html>
+<!-- Det påverkar mycket accessibility, dvs skärmläsarna och liknande  -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Endast en `<title>` används; flera kan orsaka oväntat beteende och påverka SEO samt tillgänglighet negativt. -->
+    <title>A11y News</title>
+    <script src="script.js" defer></script>
+</head>
+
+<meta name="description" content="A11y News provides the latest updates on digital accessibility, helping developers build inclusive websites and applications.">
+
+
+<body>
+    <!-- Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
+    <nav class="navigation">
+        <h1>A11y News</h1>
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#world" class="nav-item">World</a>
+        <a href="#sport" class="nav-item">Sports</a>
+        <a href="#entertainment" class="nav-item">Entertainment</a>
+    </nav>
+
+    <!-- Svåråtkomligt inputfällt -->
+     <section class="hearder-block">
+    <div class="input-container">
+        <input class="search-input" aria-label="Search" type="text" placeholder="Search">
+        <button type="submit" class="search-icon" aria-label="Search button"></button>
+    </div>
+
+    <!-- Dold text och klickbar div. 
+     .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
+        <div class="hidden-text-container">
+        <h3 class="hidden-text" aria-hidden="true">This text is invisible.</h3>
+        <button class="button" aria-label="Invisible text">Click here!</button>
+        </div>
+    </section>
+
+        <div class="article">
+            <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
+            <h2 class="headline">Breaking News: ...!</h2>
+            <p>Scientists have discovered a new deep-sea fish with bioluminescent fins off the coast of Australia. The
+                unnamed species is believed to have unique traits that could contribute to future medical research and
+                biotechnology.</p>
+            <button class="button">Click here!</button>
+
+        <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
+        <div class="article">
+            <h3>Lunar New Year: Celebrate with us!</h3>
+
+            <!-- Bilder visas inte, varför? -->
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="images/ocean.webp" alt="Ocean view image" tabindex="0" aria-label="Ocean view image, access the news by pressing the images">
+                    <span class="image-click"></span>
+                </div>
+                <div class="image-wrapper">
+                    <img src="images/city.webp" alt="City image" tabindex="0" aria-label="City image, access the news by pressing the images">
+                    <span class="image-click"></span>
+                </div>
+                <div class="image-wrapper">
+                    <img src="images/family.webp" alt="Family image" tabindex="0" aria-label="Family image, access the news by pressing the images">
+                    <span class="image-click"></span>
+                </div>
+            </div>
+
+            <!-- <p>Access the news by pressing the images</p> -->
+        </div>
+
+        <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
+        <div class="article">
+            <p class="headline">Se en 50MB bild ladda långsamt!</p>
+            <img src="images/JPEG_example_flower-removebg-preview_1.webp"
+                alt="Flower image">
+        </div>
+
+        <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
+        <div class="article footer-block">
+            <video class="animations" autoplay muted loop controls><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video>
+            <video class="animations" autoplay muted loop controls> <source src="images/hi.webm" type="video/webm" /></video>
+        </div>
+    </div>
+</body>
+
+</html>

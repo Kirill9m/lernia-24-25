@@ -1,0 +1,31 @@
+@use './mixins' as *;
+
+.mini-footer {
+    grid-row: 17 / 21;
+    grid-column: 1 / 7;
+    background-color: #011827;
+    text-align: center;
+  
+    h2 {
+      color: #FFF;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 1.6rem;
+  
+      @media screen and (min-width: 800px) {
+        padding: 8rem 25% 2rem 25%;
+        margin-top: 0rem;
+      }
+    }
+  
+    button {
+      border: 2px solid #8ACFE5;
+      color: #8ACFE5;
+      padding: 20px 60px 20px 60px;
+      background-color: transparent;
+      border-radius: 0.3rem;
+      @include roboto-bold;
+      font-size: 1.4rem;
+      margin-bottom: 8rem;
+    }
+  }

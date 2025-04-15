@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["vitest/globals"]
+  },
+  "include": [
+    "src/**/*.tsx",  // Include all .tsx files in the src directory and subdirectories
+    "src/**/*.ts"   // Include all .ts files in the src directory and subdirectories
+  ],
+  "exclude": [
+    "node_modules", // Always exclude node_modules
+    "**/*.test.tsx", // Exclude test files (important!)
+    "**/*.test.ts"  // Exclude test files (important!)
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

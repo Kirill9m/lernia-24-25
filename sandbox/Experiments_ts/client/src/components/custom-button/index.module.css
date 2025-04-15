@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.button {
+    padding: 10px 5px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    position: relative;
+}
+
+.primary {
+    background: #1677ff00;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.8rem;
+    font-family: Poppins, sans-serif;
+}
+
+.primary:hover {
+    background: #14141486
+}
+
+.logIn {
+    font-family: Poppins, sans-serif;
+    background: #141414;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-width: 60px;
+}
+
+.logIn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.secondary {
+    font-family: Poppins, sans-serif;
+    background: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.secondary:hover {
+    background: #00000059;
+    transform: scale(1.1);
+}
+
+.danger {
+    background: #ff4d4f;
+    color: white;
+}
+
+.danger:hover {
+    background: #ff7875;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    opacity: 0.6;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.button:hover .icon {
+    transform: scale(1.1);
+}
+
+.button:active .icon {
+    transform: scale(0.95);
+}
+
+.primary .icon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.secondary .icon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.danger .icon {
+    color: white;
+}
+
+.disabled .icon {
+    opacity: 0.6;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

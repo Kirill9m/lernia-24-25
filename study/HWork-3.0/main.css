@@ -1,0 +1,16 @@
+.main-page {
+    height: 200px;
+    position: relative;
+
+  }
+h1{
+    color:blue;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

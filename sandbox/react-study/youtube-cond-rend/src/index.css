@@ -1,0 +1,17 @@
+.welcome-message {
+  font-size: 2.5em;
+  background-color: greenyellow;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.login-promt {
+  font-size: 2.5em;
+  background-color: rgb(255, 47, 47);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}

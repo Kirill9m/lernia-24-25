@@ -1,0 +1,24 @@
+@use './mixins' as *;
+@use 'header.scss';
+@use 'buttons.scss';
+@use 'review.scss';
+@use 'mini-footer.scss';
+@use 'collage.scss';
+@use 'footer.scss';
+@use 'popular-rooms.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  @include roboto-regular;
+}
+
+.container {
+  background-color: #FFF;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 100%;
+  width: 100%;
+}
+

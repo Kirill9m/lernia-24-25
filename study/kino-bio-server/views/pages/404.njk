@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "sections/head.njk" %}
+  <body>
+    {% include "sections/header.njk" %}
+    <span class="eachMovie__desc" style="color: red;">{{ title }}</span>
+    <button class="eachMovie__btn">
+      <a href="/movies">Tillbaka</a>
+    </button>
+    {% include "sections/footer.njk" %}
+  </body>
+</html>

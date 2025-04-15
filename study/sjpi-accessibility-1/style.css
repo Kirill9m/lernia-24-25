@@ -1,0 +1,275 @@
+
+|/* Återställer standardmarginaler/padding och använder border-box för att inkludera padding i elementets storlek */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif
+}
+
+/* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
+body {
+  background: #ebf3f8;
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+/* Tar bort understrykning på länkar och ändrar färg */
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Stilar för en knapp-liknande div, men "not-allowed" cursor gör att den ser inaktiv ut */
+.button {
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #3498db;
+  color: #000;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  width: 8rem;
+  border: none;
+}
+
+/* Nästan osynlig text, spegelvänd */
+.hidden-text {
+  opacity: 1;
+  font-size: 2rem;
+  /* transform: rotate(180deg); */
+}
+
+.hidden-text-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hearder-block {
+  background-color: #3ca7d12f;
+  padding: 2rem;
+}
+
+/* En behållare med mittjusterad text och en blå transparent bakgrund */
+.container {
+  width: 100%;
+  margin-left: 1rem;
+  margin: auto;
+  background-color: #3498db;
+}
+
+/* Artikel med prickad orange linje och en radial gradient som bakgrund */
+.article {
+  height: auto;
+  margin-top: 2rem;
+}
+
+/* Rubrik med stor text och mörkröd färg, justerad till höger */
+.headline {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+  margin-left: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+p {
+  text-align: center;
+}
+
+/* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
+.navigation {
+  background-color: #2c3e50;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+div {
+  text-align: center;
+  font-style: italic;
+  padding: 0.5rem;
+}
+
+/* Navigeringslänkar */
+.nav-item {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-item.active {
+  border-bottom: 5px solid #3498db;
+  font-weight: bold;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Bakgrundsfärg vid hover på navigationslänkar */
+.nav-item:hover {
+  background-color: #3498db;
+}
+
+/* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-click {
+  background-image: url('images/click.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #3498db;
+  cursor: pointer;
+}
+
+/* Definierar storleken på bilderna och gör att de täcker det angivna utrymmet utan att bli förvrängda  */
+.image-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+
+/* Input-fält i en container med kolumnlayout och flytande positionering */
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  float: right;
+  width: 100%;
+}
+
+/* Inputfält med röd text och svart ram */
+.input-container input {
+  font-size: 1rem;
+  padding: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+}
+
+/* Knapp med rosa kant, mörkröd bakgrund och roterad */
+.input-container button {
+  cursor: pointer;
+  background-color: #3498db;
+  width: 4rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  min-width: 3rem;
+}
+
+.animations {
+  padding: 1rem;
+  height: 220px;
+}
+
+.search-icon {
+  background-image: url('images/search.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 85%;
+  margin-right: 0.5rem;
+}
+
+.article {
+  margin-top: 6rem;
+}
+
+.footer-block {
+  border-top: 3px solid #000;
+}
+
+.info-text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(252, 25, 25, 0.8);
+  padding: 10px;
+  text-align: center;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .nav-item.active {
+    background-color: #3ca7d12f;
+    border-bottom: 0px solid #3ca7d12f;
+    font-weight: bold;
+    pointer-events: none;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin-bottom: 1.4rem;
+  }
+  
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-input {
+    min-width: 100px;
+  }
+
+  .animations {
+    height: 200px;
+    max-width: 300px;
+  }
+}

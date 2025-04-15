@@ -1,0 +1,56 @@
+{
+  "name": "kino-bio-projekt",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "sass": "sass --no-source-map src/sass/styles.scss ./static/styles/main.css"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md,html}": [
+      "prettier --write --ignore-unknown",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0"
+  },
+  "dependencies": {
+    "babel": "^5.8.38",
+    "express": "^4.21.2",
+    "marked": "^15.0.6",
+    "node-fetch": "^3.3.2",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.83.4"
+  },
+  "description": "---",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kirill9m/kino-bio-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kirill9m/kino-bio-server/issues"
+  },
+  "homepage": "https://github.com/Kirill9m/kino-bio-server#readme"
+}

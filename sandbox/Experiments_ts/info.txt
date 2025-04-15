@@ -1,0 +1,15 @@
+//Server main build
+npm i -g express-generator
+express --no-view
+npm i dotenv, concurrently, nodemon
+
+
+//Database update:
+npx prisma migrate dev
+
+//React + typescript
+npx create-react-app client --template redux-typescript
+
+//Dev
+"client": "npm start --prefix client",
+"dev": "concurrently \"npm run server\" \"prisma generate --watch\" \"npm run client\" \"npx prisma studio\""

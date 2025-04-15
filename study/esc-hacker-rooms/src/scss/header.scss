@@ -1,0 +1,146 @@
+@use './mixins' as *;
+
+.header {
+  background-color: #011827;
+  grid-row: 1 / 2;
+  grid-column: 1 / 7;
+
+  @media screen and (min-width: 800px) {
+    margin-top: auto;
+    font-size: 2.5rem;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 4rem 2rem;
+
+    h1 {
+      color: #fff;
+
+      span {
+        display: flex;
+        @include roboto-bold;
+        font-size: 1.5rem;
+
+        @media screen and (min-width: 800px) {
+          display: inline;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+      margin-right: 1rem;
+    }
+
+    .menu-open-button {
+      @media screen and (min-width: 800px) {
+        display: none;
+      }
+    }
+  }
+
+  .with-animation {
+    animation-name: color-shift;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes color-shift {
+    from {
+      background-color: rgb(255, 255, 255);
+      display: none;
+      opacity: 0;
+    }
+
+    to {
+      background-color: #011827;
+      opacity: 1;
+    }
+  }
+
+  .nav-menu {
+    @media screen and (max-width: 800px) {
+      display: none;
+      position: fixed;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      z-index: auto;
+      top: 20px;
+      left: 20px;
+      background-color: #011827;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.3);
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          margin-bottom: 2rem;
+        }
+      }
+
+      a {
+        color: #ffffff;
+        list-style: none;
+        font-size: 2rem;
+        text-decoration: none;
+        @include roboto-bold;
+      }
+    }
+
+    .menu-close-button {
+      position: fixed;
+      top: 40px;
+      right: 20px;
+
+      @media screen and (min-width: 800px) {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      display: block;
+      margin-bottom: 1.5rem;
+
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin: 0 7rem 0 7rem;
+
+        a {
+          color: #ffffff;
+          list-style: none;
+          font-size: 1.5rem;
+          text-decoration: none;
+          @include roboto-bold;
+        }
+      }
+    }
+  }
+}
+
+.header-image {
+  grid-row: 2 / 6;
+  grid-column: 1 / 7;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}

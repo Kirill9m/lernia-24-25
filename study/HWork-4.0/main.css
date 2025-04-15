@@ -1,0 +1,198 @@
+* {
+    /* Global style appeared  */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body height is streched over whole window, and background gradient applied */
+body {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top, #ff7d76, #fe837d, #fd8a84, #fc908a,
+            #fb9691, #fb9d98, #fba4a0, #fbaba7, #fcb4b0, #fdbeba, #fdc7c3, #fdd0cd);
+}
+
+/* Trash can have smaller opacity, and display type */
+.trashcan {
+    display: inline-block;
+    opacity: 0.6;
+}
+
+/* Trashcan hover line-through small hotfix */
+.trashcan:hover {
+    text-decoration: none;
+}
+
+/* Trashcan hover appears */
+.trashcan:hover {
+    opacity: 1;
+}
+
+/* Completed class have a line through, and gray color */
+.completed :first-child {
+    color: lightgray;
+    text-decoration-line: line-through;
+}
+
+
+/* Main conteiner centered */
+#container {
+    /* opacity: 0; */
+    margin: auto;
+    margin-top: 0%;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+}
+
+/* Header and counter centered */
+h1,
+#count {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+
+}
+
+/* Buttons and windows centered */
+#buttonsAndWindows {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+/* List items centred font size is bigger */
+ul {
+    padding-bottom: 25px;
+    padding-top: 5px;
+    padding-left: 0px;
+    margin: auto;
+    width: 50%;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+/* Paragraf and input text have a smaller, similar text size and Arial font  */
+span,
+p {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-size: 0.8rem;
+}
+
+/* Heading have a bigger letters, and some padding down */
+h1 {
+    padding-bottom: 10px;
+    font-size: 2.6rem;
+}
+
+/* Button have uppercase */
+button {
+    text-transform: uppercase;
+}
+
+/* Animation: main container is jumping from upper border and the text appears */
+.special {
+    animation-name: jumpAndAppear;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}
+
+@keyframes jumpAndAppear {
+    0% {
+        transform: translateY(-60px);
+    }
+
+    50% {
+        transform: translateY(60px);
+    }
+
+    100% {
+        /* opacity: 1; */
+    }
+}
+
+.hideAndAppear {
+    animation-name: textIsComing;
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes textIsComing {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Animation: New text input is coming from down and jumping up */
+@keyframes textDownAndUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+ul>li {
+    animation-name: textDownAndUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    opacity: 1;
+
+}
+
+/* List elemet line through */
+li:hover {
+    text-decoration-line: line-through;
+}
+
+/* Input field border color then activated */
+input:focus-visible {
+    border: 2px solid #4287DB;
+    outline: none;
+}
+
+/* Animation: for warning text, 3 blinks */
+.warningText {
+    animation-name: warningBlink;
+    color: red;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+@keyframes warningBlink {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

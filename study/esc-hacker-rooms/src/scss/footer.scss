@@ -1,0 +1,57 @@
+@use './mixins' as *;
+
+.footer {
+    grid-row: 33 / 36;
+    grid-column: 1 / 7;
+    background-color: #011827;
+    color: #FFF;
+    text-align: start;
+    margin-top: 8rem;
+  
+    section {
+      margin: 3rem 1rem 1rem;
+    }
+  
+    nav {
+      margin: 2rem 0 2rem 1rem;
+    }
+  
+    h2 {
+      @include roboto-bold;
+      margin-bottom: 10px
+    }
+  
+    li {
+      list-style: none;
+    }
+  
+    a {
+      @include roboto-regular;
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  
+    .play {
+      margin-top: 20px;
+    }
+  
+    @media screen and (min-width: 800px) {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      margin-top: 100px;
+  
+      section {
+        padding: 6rem 6rem 0 6rem;
+        flex: 2;
+        margin: 0 1rem;
+      }
+  
+      nav {
+        padding: 6rem 0;
+        flex: 1;
+        margin: 0 1rem;
+      }
+    }
+  }
