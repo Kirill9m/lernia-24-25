@@ -1,8 +1,13 @@
-import { TaskInputProps } from "../types";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { FC } from "react";
+import { TaskItem } from "../types";
 
-export default function TaskInput({ onCreateItem }: TaskInputProps) {
+type Props = {
+  onCreateItem: (itemYoCreate: TaskItem) => void;
+}
+
+const TaskInput: FC<Props> = ({ onCreateItem }) => {
   const [text, setText] = useState("");
   const [error, setError] = useState(false);
 
@@ -17,7 +22,6 @@ export default function TaskInput({ onCreateItem }: TaskInputProps) {
       if (text.length > 0) {
         onCreateItem(
           {
-            id: parseInt(uuidv4().split('-')[0], 16),
             label: text,
             completed: false,
           }
@@ -39,3 +43,5 @@ export default function TaskInput({ onCreateItem }: TaskInputProps) {
     </form>
   );
 }
+
+export default TaskInput;

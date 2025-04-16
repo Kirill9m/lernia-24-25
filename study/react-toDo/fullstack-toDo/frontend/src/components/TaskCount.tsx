@@ -1,7 +1,14 @@
-import { TaskCountProps } from "../types";
+import { FC } from "react";
+import { TaskItem } from "../types";
 
-export default function TaskCount({ items }: TaskCountProps) {
+type Props = {
+  items: TaskItem[];
+}
+
+const TaskCount: FC<Props> = ({ items }) => {
   return (
     <p className="app__status">{items.filter(item => item.completed).length} completed</p>
   );
 }
+
+export default TaskCount;
