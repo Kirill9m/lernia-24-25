@@ -13,14 +13,14 @@ type Props = {
 const TaskList: FC<Props> = ({ items, onTaskComplete, onTaskDelete }) => {
   return (
     <ul className="todoList">
-      {items.map((item) => {
+      {items.map((item, index) => {
         let className = "todoItem";
         if (item.completed) {
           className += " todoItem--completed";
         }
 
         return (
-          <li className={className} onClick={() => {
+          <li key={index} className={className} onClick={() => {
             onTaskComplete(item);
           }}>
             <span className="todoItem__label">{item.label}</span>
