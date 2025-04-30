@@ -17,7 +17,7 @@ function App() {
     loadTasks();
   }, [])
 
-  const handleTaskDelete = () => {
+  const handleTaskDelete = (item: TaskItem) => {
     setItems(items.filter((oldItem) => oldItem != item));
   }
 
@@ -25,7 +25,7 @@ function App() {
     <main className="app">
       <h1 className="app__header">My ToDo</h1>
       <TaskCount items={items} />
-      <TaskInput onCreateItem={async (newItem) => {
+      <TaskInput onCreateItem={async (newItem: TaskItem) => {
         const response = await fetch('api/tasks', {
           method: 'POST',
           headers:{
@@ -49,7 +49,7 @@ function App() {
             ...oldItem, completed: oldItem == item ? !item.completed : oldItem.completed,
           })));
       }}
-      onTaskDelete={(item) => handleTaskDelete} />
+      onTaskDelete={(item) => handleTaskDelete(item)} />
     </main>
   );
 }
